@@ -20,6 +20,11 @@ public class ChatControlador {
 		return "chat/index";
 	}
 	
+	@GetMapping("/mensajes")
+	public String chatPersonal(Model model) {
+		return "chat/personal";
+	}
+	
 	@MessageMapping("chat.sendMessage")
 	@SendTo("/topic/public")
 	public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {

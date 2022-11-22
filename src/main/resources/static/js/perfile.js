@@ -1,8 +1,3 @@
-// const CLOUDIN_URL = "CLOUDINARY_URL=cloudinary://946294516624134:i7xijrjqBndOxZRf9UXKaXNshNo@datsowgd2"
-// const CLOUDIN_UPLOAD_PRESET = "ofaztj2u"
-
-//var cl = new cloudinary.Cloudinary({cloud_name: "datsowgd2", secure: true});
-
 const emailUser = document.getElementById("user").firstChild.data;
 const containerCard = document.getElementById("container__card");
 const fotoPerfilHeader = document.getElementById("fotoPerfilHeader");
@@ -60,7 +55,8 @@ window.onload = async function () {
   });
 
   containerCard.innerHTML = arrayData.map((element) => {
-    return `<div class="card">
+    return `
+    <div class="card">
     <div class="card-header d-flex justify-content-start align-items-center">
         <div>
             <img src="${(element.url_perfil === null || element.url_perfil === undefined) ? 'https://res.cloudinary.com/datsowgd2/image/upload/v1669097557/proyecto/tmp-3-1669097556953_lbohns.png' : element.url_perfil}" alt="${
