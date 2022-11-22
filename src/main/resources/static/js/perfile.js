@@ -83,6 +83,26 @@ document.getElementById("actualizarDatos").addEventListener("submit", (e) => {
 
   let img_perfil = document.getElementById("img_perfil");
 
+  if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(text_nombre.value)){
+    Swal.fire("Alerta","Solo puede contener letras y espacios","warning");
+    return;
+  }
+
+  if(!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(text_apellido.value)){
+    Swal.fire("Alerta","Solo puede contener letras y espacios","warning");
+    return;
+  }
+
+  if(text_fecha.value === ""){
+    Swal.fire("Alerta","Favor de introducir tu fecha de nacimiento","warning");
+    return;
+  }
+
+  if(text_genero.value === "null"){
+    Swal.fire("Alerta","Favor de introducir tu genero","warning");
+    return;
+  }
+
   const formData = new FormData();
   formData.append("image", img_perfil.files[0]);
   formData.append("nombre", text_nombre.value);
